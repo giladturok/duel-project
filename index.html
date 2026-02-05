@@ -3,305 +3,402 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
+  <meta name="description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta name="keywords" content="masked diffusion, discrete diffusion, language models, likelihood estimation, MDLM, LLaDA, machine learning">
+  <meta name="author" content="Gilad Turok, Chris De Sa, Volodymyr Kuleshov">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:site_name" content="Cornell University">
+  <meta property="og:title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
+  <meta property="og:description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta property="og:url" content="https://github.com/kuleshov-group/duel">
+  <meta property="og:image" content="static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="og:image:alt" content="DUEL - Exact Likelihood for Masked Diffusion">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Gilad Turok">
   <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
+  <meta property="article:tag" content="masked diffusion">
+  <meta property="article:tag" content="language models">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
+  <meta name="twitter:description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta name="twitter:image" content="static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="DUEL - Exact Likelihood for Masked Diffusion">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
+  <meta name="citation_title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
+  <meta name="citation_author" content="Turok, Gilad">
+  <meta name="citation_author" content="De Sa, Chris">
+  <meta name="citation_author" content="Kuleshov, Volodymyr">
+  <meta name="citation_publication_date" content="2026">
+  <!-- <meta name="citation_conference_title" content="International Conference on Machine Learning (ICML)"> -->
+
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+  <title>DUEL: Exact Likelihood for Masked Diffusion</title>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
+  <!-- MathJax for equations -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "headline": "DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking",
+    "description": "We introduce DUEL, a framework for exact likelihood computation in masked diffusion models under deterministic position selection.",
     "author": [
       {
         "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
+        "name": "Gilad Turok",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Cornell University"
         }
       },
       {
         "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
+        "name": "Chris De Sa",
         "affiliation": {
           "@type": "Organization",
-          "name": "INSTITUTION_NAME"
+          "name": "Cornell University"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Volodymyr Kuleshov",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Cornell University"
         }
       }
     ],
-    "datePublished": "2024-01-01",
+    "datePublished": "2026-01-01",
     "publisher": {
       "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
+      "name": "Cornell University"
     },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
+    "keywords": ["masked diffusion", "discrete diffusion", "language models", "likelihood estimation", "machine learning"],
+    "isAccessibleForFree": true
+  }
+  </script>
+
+  <style>
+    /* Custom styles for DUEL page */
+    .citation {
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .citation:hover {
+      text-decoration: underline;
+    }
+
+    .algorithm-box {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+    }
+    .algorithm-box .algo-title {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-family: 'Inter', sans-serif;
+    }
+    .algorithm-box .algo-line {
+      margin: 0.25rem 0;
+      white-space: pre-wrap;
+    }
+    .algorithm-box .keyword {
+      color: #0066cc;
+      font-weight: bold;
+    }
+    .algorithm-box .comment {
+      color: #6c757d;
+      font-style: italic;
+    }
+    .algorithm-box .denoiser {
+      color: #7c3aed;
+    }
+    .algorithm-box .rule {
+      color: #2563eb;
+    }
+    .algorithm-box .highlight-sample {
+      color: #0d6efd;
+    }
+    .algorithm-box .highlight-ll {
+      color: #198754;
+    }
+
+    .equation-box {
+      background: #f8f9fa;
+      border-left: 4px solid #2563eb;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    .equation-box .eq-label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .theorem-box {
+      background: white;
+      border: 2px solid #7c3aed;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    .theorem-box .theorem-title {
+      font-weight: 600;
+      color: #7c3aed;
+      margin-bottom: 0.5rem;
+    }
+
+    .definition-box {
+      background: white;
+      border: 2px solid #2563eb;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      overflow-x: auto;
+    }
+    .definition-box .def-title {
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Collapsible sections - clean minimal design */
+    details.collapsible-section {
+      margin: 1.5rem 0;
+      border-left: 3px solid #e5e7eb;
+      padding-left: 1rem;
+    }
+    details.collapsible-section summary {
+      padding: 0.5rem 0;
+      cursor: pointer;
+      color: #4b5563;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+    details.collapsible-section summary::-webkit-details-marker {
+      display: none;
+    }
+    details.collapsible-section summary::before {
+      content: "+";
+      font-weight: 600;
+      font-size: 1rem;
+      color: #6b7280;
+      width: 1rem;
+      flex-shrink: 0;
+    }
+    details.collapsible-section[open] summary::before {
+      content: "\2212";
+    }
+    details.collapsible-section summary:hover {
+      color: #1f2937;
+    }
+    details.collapsible-section .collapsible-content-inner {
+      padding: 0.75rem 0 0.5rem 1.5rem;
+      color: #374151;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.85rem;
+    }
+    .results-table th, .results-table td {
+      border: 1px solid #dee2e6;
+      padding: 0.4rem 0.6rem;
+      text-align: center;
+    }
+    .results-table th {
+      background: #f8f9fa;
+      font-weight: 600;
+    }
+    .results-table .highlight {
+      font-weight: bold;
+      color: #198754;
+    }
+
+    .table-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+    .table-row .table-cell {
+      flex: 1;
+      min-width: 280px;
+    }
+    .table-row .table-cell .results-table {
+      margin: 0;
+    }
+
+    .key-insight {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .key-insight strong {
+      color: #ffd700;
+    }
+
+    .takeaway-box {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .takeaway-box strong {
+      color: #ffd700;
+    }
+
+    .section-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
       }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+    }
+
+    .figure-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .figure-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .figure-container .caption {
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
+  <section class="hero" style="padding: 1.5rem 0 1rem 0;">
+    <div class="hero-body" style="padding: 1rem 1.5rem;">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
+            <h1 class="title is-2 publication-title" style="margin-bottom: 0.75rem;">DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking</h1>
+            <div class="is-size-5 publication-authors" style="margin-bottom: 0.25rem;">
+              <span class="author-block"><a href="https://giladturok.github.io" target="_blank">Gilad Turok</a>,</span>
+              <span class="author-block"><a href="https://www.cs.cornell.edu/~cdesa/" target="_blank">Chris De Sa</a>,</span>
+              <span class="author-block"><a href="https://www.cs.cornell.edu/~kuleshov/" target="_blank">Volodymyr Kuleshov</a></span>
+            </div>
+            <div class="is-size-6 publication-authors" style="margin-bottom: 0.75rem;">
+              <span class="author-block">Cornell University</span>
+            </div>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/XXXX.XXXXX.pdf" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/kuleshov-group/duel" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
               </span>
@@ -310,38 +407,18 @@
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section hero is-light" style="padding: 1.5rem 1.5rem;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+        <h2 class="title is-4">Abstract</h2>
+        <div class="content has-text-justified" style="font-size: 0.92rem; line-height: 1.6;">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Masked diffusion models (MDMs) generate text by iteratively unmasking tokens. Each step decomposes into <em style="color: #2563eb;">position selection</em> (which positions to reveal) and <em style="color: #7c3aed;">token prediction</em> (which tokens to place). We formalize <em>deterministic</em> position selection&mdash;unifying leading MDM sampling strategies&mdash;in our <strong>DUEL</strong> framework. We show DUEL admits <em>exact</em> likelihood computation via a simple algorithm. We propose DUEL likelihood as the standard evaluation metric for MDMs, addressing key limitations in existing approaches: the ELBO is a loose bound measuring likelihood under the wrong distribution, while generative perplexity requires a biased external model. Proper evaluation via DUEL reveals MDMs are substantially better than previously thought&mdash;the MDM&ndash;autoregressive perplexity gap shrinks by up to 32% on in-domain data and 82% on zero-shot benchmarks. DUEL also enables principled sampler comparisons, providing reliable rankings of fast, parallel samplers and revealing through oracle search that optimal orderings allow MDMs to surpass autoregressive models entirely.
           </p>
         </div>
       </div>
@@ -351,170 +428,748 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+<!-- MDM Generation Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">How MDMs Generate Text</h2>
+
+      <div class="content">
+        <p>
+          Masked diffusion models (MDMs) generate text by starting with a fully masked sequence and iteratively revealing tokens <a href="https://arxiv.org/abs/2406.07524" class="citation" target="_blank">[Sahoo et al., 2024]</a>. At each step, two things happen:
+        </p>
+
+        <ul>
+          <li><strong style="color: #2563eb;">Position selection:</strong> A policy $\pi$ outputs a distribution over masked positions; one is chosen to reveal.</li>
+          <li><strong style="color: #7c3aed;">Token prediction:</strong> A denoising network $x_\theta$ outputs logits; we define the <em>denoising distribution</em> $p_\theta(v \mid \mathbf{z}) = P_\ell[v]$ where $\mathbf{P} = \mathrm{softmax}(x_\theta(\mathbf{z}))$ is the token probability matrix. A token is sampled from this distribution for the selected position.</li>
+        </ul>
+
+        <p>
+          This repeats until all positions are revealed. The figure below shows one step:
+        </p>
+
+        <!-- Custom MDM Generation Figure with histograms -->
+        <div class="figure-container" style="margin: 2rem 0;">
+          <svg viewBox="0 0 650 140" style="width: 100%; min-height: 180px; height: auto; font-family: 'Inter', sans-serif;">
+            <!-- Arrowhead definition -->
+            <defs>
+              <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#9ca3af"/>
+              </marker>
+            </defs>
+
+            <!-- Current sequence: 4 tokens, 2 revealed, 2 masked -->
+            <g transform="translate(10, 30)">
+              <text x="35" y="-12" font-size="11" font-weight="600" fill="#333">Current Sequence</text>
+              <rect x="0" y="0" width="32" height="32" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="16" y="21" font-size="11" fill="#166534" text-anchor="middle">the</text>
+              <rect x="36" y="0" width="32" height="32" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+              <text x="52" y="21" font-size="11" fill="#6b7280" text-anchor="middle">[M]</text>
+              <rect x="72" y="0" width="32" height="32" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="88" y="21" font-size="11" fill="#166534" text-anchor="middle">cat</text>
+              <rect x="108" y="0" width="32" height="32" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+              <text x="124" y="21" font-size="11" fill="#6b7280" text-anchor="middle">[M]</text>
+              <text x="55" y="50" font-size="9" fill="#666" text-anchor="middle">pos: 1 &nbsp; 2 &nbsp; 3 &nbsp; 4</text>
+            </g>
+
+            <!-- Arrow -->
+            <path d="M 155 46 L 175 46" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <!-- Position selection histogram -->
+            <g transform="translate(185, 15)">
+              <text x="20" y="-2" font-size="11" font-weight="600" fill="#2563eb">Position Selection $\pi$</text>
+              <!-- Axis -->
+              <line x1="0" y1="60" x2="90" y2="60" stroke="#ccc" stroke-width="1"/>
+              <!-- Bars - only positions 2 and 4 have probability -->
+              <rect x="5" y="55" width="15" height="5" fill="#e5e7eb"/>
+              <rect x="25" y="20" width="15" height="40" fill="#2563eb"/>
+              <rect x="45" y="55" width="15" height="5" fill="#e5e7eb"/>
+              <rect x="65" y="20" width="15" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+              <!-- Labels -->
+              <text x="12" y="72" font-size="8" fill="#666" text-anchor="middle">1</text>
+              <text x="32" y="72" font-size="8" fill="#2563eb" text-anchor="middle" font-weight="600">2</text>
+              <text x="52" y="72" font-size="8" fill="#666" text-anchor="middle">3</text>
+              <text x="72" y="72" font-size="8" fill="#666" text-anchor="middle">4</text>
+              <text x="45" y="85" font-size="8" fill="#2563eb" text-anchor="middle">→ select pos 2</text>
+            </g>
+
+            <!-- Arrow -->
+            <path d="M 285 46 L 305 46" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <!-- Token prediction histogram -->
+            <g transform="translate(315, 15)">
+              <text x="35" y="-2" font-size="11" font-weight="600" fill="#7c3aed">Token Prediction $x_\theta$</text>
+              <!-- Axis -->
+              <line x1="0" y1="60" x2="120" y2="60" stroke="#ccc" stroke-width="1"/>
+              <!-- Bars - decreasing probabilities -->
+              <rect x="5" y="10" width="18" height="50" fill="#7c3aed"/>
+              <rect x="28" y="30" width="18" height="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+              <rect x="51" y="42" width="18" height="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+              <rect x="74" y="50" width="18" height="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+              <rect x="97" y="55" width="18" height="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+              <!-- Labels -->
+              <text x="14" y="72" font-size="7" fill="#7c3aed" text-anchor="middle" font-weight="600">big</text>
+              <text x="37" y="72" font-size="7" fill="#666" text-anchor="middle">fat</text>
+              <text x="60" y="72" font-size="7" fill="#666" text-anchor="middle">old</text>
+              <text x="83" y="72" font-size="7" fill="#666" text-anchor="middle">...</text>
+              <text x="106" y="72" font-size="7" fill="#666" text-anchor="middle">...</text>
+              <text x="60" y="85" font-size="8" fill="#7c3aed" text-anchor="middle">→ sample "big"</text>
+            </g>
+
+            <!-- Arrow -->
+            <path d="M 445 46 L 465 46" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <!-- Result sequence -->
+            <g transform="translate(475, 30)">
+              <text x="35" y="-12" font-size="11" font-weight="600" fill="#166534">Updated Sequence</text>
+              <rect x="0" y="0" width="32" height="32" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="16" y="21" font-size="11" fill="#166534" text-anchor="middle">the</text>
+              <rect x="36" y="0" width="32" height="32" rx="3" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+              <text x="52" y="21" font-size="11" fill="#7c3aed" text-anchor="middle" font-weight="600">big</text>
+              <rect x="72" y="0" width="32" height="32" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+              <text x="88" y="21" font-size="11" fill="#166534" text-anchor="middle">cat</text>
+              <rect x="108" y="0" width="32" height="32" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5"/>
+              <text x="124" y="21" font-size="11" fill="#6b7280" text-anchor="middle">[M]</text>
+              <text x="55" y="50" font-size="9" fill="#666" text-anchor="middle">repeat until done</text>
+            </g>
+          </svg>
+          <p class="caption"><strong>Figure:</strong> One step of MDM generation. <span style="color: #2563eb;">Position selection</span> chooses among masked positions (here, equal probability for positions 2 and 4). <span style="color: #7c3aed;">Token prediction</span> samples a token from the vocabulary distribution at the selected position.</p>
+        </div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
     </div>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
 
 
+<!-- Deterministic Position Selection Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Deterministic Position Selection</h2>
+
+      <div class="content">
+        <p>
+          The position selection policy $\pi$ can be random or deterministic. <strong>Nearly all leading MDM sampling strategies use deterministic selection</strong>&mdash;a fixed rule that maps the current sequence state to a set of positions, with no randomness involved. This includes the sampling strategies used by most fast samplers and state-of-the-art MDMs (e.g. LLaDA).
+        </p>
+
+        <p>
+          We call such a rule an <strong>unmasking rule</strong> $F$. Given a partially-revealed sequence $\mathbf{z}$, the rule $F(\mathbf{z})$ returns a non-empty subset of masked positions to unmask:
+        </p>
+
+        <p style="text-align: center; font-size: 1.1rem; margin: 1rem 0;">
+          $\emptyset \neq F(\mathbf{z}) \subseteq \mathcal{M}(\mathbf{z})$
+        </p>
+
+        <p>
+          Since the token probabilities $\mathbf{P} = \mathrm{softmax}(x_\theta(\mathbf{z}))$ are deterministic functions of $\mathbf{z}$, rules depending on $\mathbf{P}$ (like greedy confidence) are valid.
+        </p>
+
+        <!-- Collapsible Common Unmasking Rules -->
+        <details class="collapsible-section" open>
+          <summary><span><strong>Common Unmasking Rules</strong></span></summary>
+          <div class="collapsible-content-inner">
+            <p style="margin-bottom: 0.75rem; font-size: 0.9rem; color: #666;">Let $\mathcal{M}(\mathbf{z})$ denote masked positions. $P_\ell^{(1)}$ and $P_\ell^{(2)}$ are the top-two token probabilities at position $\ell$.</p>
+            <ul style="margin: 0;">
+              <li><strong>Left-to-Right:</strong> Select the $k$ leftmost masked positions. Recovers autoregressive generation when $k=1$.</li>
+              <li><strong>Greedy Confidence</strong> <a href="https://arxiv.org/abs/2502.09992" class="citation" target="_blank">[Nie et al., 2025]</a>: Select $k$ positions with highest $P_\ell^{(1)}$. Used by LLaDA.</li>
+              <li><strong>Probability Margin</strong> <a href="https://arxiv.org/abs/2502.06768" class="citation" target="_blank">[Kim et al., 2025]</a>: Select $k$ positions with highest gap $P_\ell^{(1)} - P_\ell^{(2)}$.</li>
+              <li><strong>Confidence Threshold</strong> <a href="https://arxiv.org/abs/2505.22618" class="citation" target="_blank">[Wu et al., 2025]</a>: Select all positions where $P_\ell^{(1)} \geq \mu$. Enables adaptive parallelism.</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<!-- DUEL Framework Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">The DUEL Framework</h2>
+
+      <div class="content">
+        <p>
+          A <strong>DUEL sampler</strong> combines a pretrained denoising network $x_\theta$ with an unmasking rule $F$. In practice, this is just a pretrained MDM together with a choice of how to sample from it.
+        </p>
+
+        <div class="definition-box">
+          <p class="def-title">Definition (DUEL Sampler)</p>
+          <p>
+            A <strong>DUEL sampler</strong> is a pair $(\color{#7c3aed}{x_\theta}, \color{#2563eb}{F})$ consisting of:
+          </p>
+          <ul style="margin: 0.5rem 0 0.5rem 1.5rem;">
+            <li><span style="color: #7c3aed;"><strong>Denoising network</strong></span> $x_\theta$: outputs token probabilities $\mathbf{P} = \mathrm{softmax}(x_\theta(\mathbf{z})) \in \Delta_V^L$</li>
+            <li><span style="color: #2563eb;"><strong>Deterministic unmasking rule</strong></span> $F$: selects which positions to reveal</li>
+          </ul>
+        </div>
+
+        <p>
+          The rule $F$ induces a <strong>deterministic unmasking policy</strong> $\pi^F$&mdash;it places all probability mass on the positions $F$ selects, with no randomness in position selection. Together, $(x_\theta, F)$ defines a complete generative procedure.
+        </p>
+
+        <p>
+          The sampling procedure is straightforward: start fully masked, repeatedly select positions via $F$ and sample tokens at those positions, until all positions are revealed.
+        </p>
+
+        <!-- Collapsible Algorithm 1 -->
+        <details class="collapsible-section" open>
+          <summary><span><strong>Algorithm 1: DUEL Sampling</strong></span></summary>
+          <div class="collapsible-content-inner" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
+            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> generated sequence $\mathbf{x}$</p>
+            <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
+            <p style="margin: 0.15rem 0;">2: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
+            <p style="margin: 0.15rem 0;">3: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
+            <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
+            <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
+            <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0d6efd;">$x_\ell \sim \mathrm{Cat}(P_\ell)$</span> <span style="color: #6c757d; font-style: italic;">// Sample token</span></p>
+            <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal token</span></p>
+            <p style="margin: 0.15rem 0;">8: <span style="color: #0066cc; font-weight: bold;">return</span> $\mathbf{z}$</p>
+          </div>
+        </details>
+
+        <div class="key-insight">
+          <strong>Implicit Distribution:</strong> Algorithm 1 defines an <em>implicit</em> generative procedure&mdash;we can draw samples without writing down the induced distribution in closed form. Different unmasking rules $F$ yield different distributions, even with the same network $x_\theta$.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- AO-ARM Formulation Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Any-Order Autoregressive Formulation</h2>
+
+      <div class="content">
+        <p>
+          A DUEL sampler generates samples&mdash;but what distribution does it sample from? To make this explicit, we build on the <em>any-order autoregressive model</em> (AO-ARM) interpretation of MDMs. This formulation decomposes generation into <span style="color: #2563eb; font-weight: 500;">position-selection</span> and <span style="color: #7c3aed; font-weight: 500;">token-prediction</span> steps, allowing us to write down the joint probability of generating a sequence via any ordered partition.
+        </p>
+
+        <h4 class="title is-5">Ordered Partitions</h4>
+
+        <p>
+          To formalize the sequence of unmasking steps during generation, we introduce <strong>ordered partitions</strong>. An ordered partition $\sigma = (\sigma_1, \ldots, \sigma_T)$ is a tuple of non-empty, pairwise disjoint subsets that together cover all positions $\{1, \ldots, L\}$. Each $\sigma_t$ records which positions are revealed at step $t$, and $T$ denotes the total number of steps.
+        </p>
+
+        <p>
+          Ordered partitions capture both sequential and parallel unmasking&mdash;a distinguishing feature of MDMs over ARMs:
+        </p>
+        <ul>
+          <li><strong>Sequential unmasking:</strong> Each $\sigma_t$ is a singleton ($|\sigma_t| = 1$), giving $T = L$ steps</li>
+          <li><strong>Parallel unmasking:</strong> Parts contain multiple positions, giving $T < L$ steps</li>
+        </ul>
+        <p>
+          We write $\mathbf{x}_{<\sigma_t}$ for the partial sequence where positions in $\sigma_1 \cup \cdots \cup \sigma_{t-1}$ are revealed and all others remain masked.
+        </p>
+
+        <!-- Visual for ordered partitions -->
+        <div style="margin: 1.5rem 0; text-align: center;">
+          <svg viewBox="0 0 550 100" style="max-width: 550px; height: auto; font-family: 'Inter', sans-serif;">
+            <!-- Sequential partition -->
+            <g transform="translate(10, 20)">
+              <text x="0" y="0" font-size="13" font-weight="600" fill="#2563eb">Sequential:</text>
+              <text x="0" y="22" font-size="12" fill="#333">$\sigma = (\{1\}, \{2\}, \{3\}, \{4\})$</text>
+              <rect x="180" y="-6" width="28" height="28" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+              <text x="194" y="13" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">1</text>
+              <text x="216" y="13" font-size="14" fill="#666">→</text>
+              <rect x="230" y="-6" width="28" height="28" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+              <text x="244" y="13" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">2</text>
+              <text x="266" y="13" font-size="14" fill="#666">→</text>
+              <rect x="280" y="-6" width="28" height="28" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+              <text x="294" y="13" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">3</text>
+              <text x="316" y="13" font-size="14" fill="#666">→</text>
+              <rect x="330" y="-6" width="28" height="28" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+              <text x="344" y="13" font-size="12" fill="#2563eb" text-anchor="middle" font-weight="600">4</text>
+              <text x="380" y="13" font-size="11" fill="#666" font-style="italic">(T = 4 steps)</text>
+            </g>
+            <!-- Parallel partition -->
+            <g transform="translate(10, 70)">
+              <text x="0" y="0" font-size="13" font-weight="600" fill="#7c3aed">Parallel:</text>
+              <text x="0" y="22" font-size="12" fill="#333">$\sigma = (\{2, 4\}, \{1, 3\})$</text>
+              <rect x="180" y="-6" width="28" height="28" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+              <text x="194" y="13" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="600">2</text>
+              <rect x="213" y="-6" width="28" height="28" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+              <text x="227" y="13" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="600">4</text>
+              <text x="254" y="13" font-size="14" fill="#666">→</text>
+              <rect x="270" y="-6" width="28" height="28" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+              <text x="284" y="13" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="600">1</text>
+              <rect x="303" y="-6" width="28" height="28" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+              <text x="317" y="13" font-size="12" fill="#7c3aed" text-anchor="middle" font-weight="600">3</text>
+              <text x="355" y="13" font-size="11" fill="#666" font-style="italic">(T = 2 steps)</text>
+            </g>
+          </svg>
+          <p class="caption" style="margin-top: 0.5rem;"><strong>Figure:</strong> Ordered partitions for a length-4 sequence. Sequential unmasking reveals one position at a time; parallel unmasking reveals multiple positions per step.</p>
+        </div>
+
+        <h4 class="title is-5">The Induced Distribution</h4>
+
+        <p>
+          The AO-ARM formulation decomposes generation into <span style="color: #2563eb;">position-selection</span> and <span style="color: #7c3aed;">token-prediction</span> steps. The joint probability $p_\theta(\mathbf{x}, \sigma)$ measures the probability that sequence $\mathbf{x}$ was generated via a specific unmasking trajectory $\sigma$. To obtain the data likelihood, we marginalize (sum) over all possible ordered partitions:
+        </p>
+
+        <p style="text-align: center; font-size: 1.1rem; margin: 1rem 0;">
+          $p_\theta(\mathbf{x}) = \sum_{\sigma} p_\theta(\mathbf{x}, \sigma)$
+        </p>
+
+        <p>
+          This defines the distribution induced by <em>any</em> unmasking policy $\pi$:
+        </p>
+
+        <div class="definition-box">
+          <p class="def-title"><strong>Induced Distribution</strong></p>
+          $$p_\theta^{\pi}(\mathbf{x}) = \sum_{\sigma} \prod_{t=1}^{T} \color{#2563eb}{\pi(\sigma_t \mid \mathbf{x}_{<\sigma_t})} \cdot \color{#7c3aed}{\prod_{\ell \in \sigma_t} p_\theta(x^{(\ell)} \mid \mathbf{x}_{<\sigma_t})}$$
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">
+            The sum ranges over all ordered partitions $\sigma$, each corresponding to a different generation trajectory. This sum has super-exponentially many terms ($\geq L!$ for sequential unmasking alone).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Exact Likelihood Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Exact Likelihood Computation</h2>
+
+      <div class="content">
+        <p>
+          Computing the induced distribution directly appears intractable&mdash;the sum is over all unmasking orders $\sigma$ (with $ \geq L!$ terms) where each requires a separate neural network evaluation. However, <strong>a deterministic rule $F$ collapses the sum to a single term</strong>:
+        </p>
+
+        <ul>
+          <li>Given any partial sequence, $F$ outputs a <em>unique</em> set of positions&mdash;there is no randomness</li>
+          <li>Any ordered partition that deviates from what $F$ would select receives <em>zero probability</em> under $\pi^F$</li>
+          <li>Exactly one ordered partition $\sigma^*$ is consistent with the policy</li>
+        </ul>
+
+        <div class="theorem-box">
+          <p class="theorem-title"><strong>Theorem (DUEL Exact Likelihood)</strong></p>
+          <p>
+            For a DUEL sampler $(x_\theta, F)$, the log-likelihood has a simple closed form:
+          </p>
+          $$\log p_\theta^{\pi^F}(\mathbf{x}) = \sum_{t=1}^{T} \sum_{\ell \in \sigma^*_t} \log p_\theta(x^{(\ell)} \mid \mathbf{x}_{<\sigma^*_t})$$
+          <p style="margin-top: 0.5rem;">
+            where $\sigma^* = (\sigma^*_1, \ldots, \sigma^*_T)$ is the <em>unique</em> ordered partition satisfying $\sigma^*_t = F(\mathbf{x}_{<\sigma^*_t})$ at each step&mdash;the partition the sampler would produce when generating $\mathbf{x}$.
+          </p>
+        </div>
+
+        <p>
+          <strong>Likelihood follows generation:</strong> The algorithm mirrors sampling&mdash;simulate the unmasking process, but instead of sampling tokens, reveal the <em>true</em> tokens from $\mathbf{x}$ and accumulate their log-probabilities. This is the crux of DUEL: the likelihood computation follows the same path as generation.
+        </p>
+
+        <!-- Algorithm 2 - open by default -->
+        <details class="collapsible-section" open>
+          <summary><span><strong>Algorithm 2: DUEL Exact Likelihood</strong></span></summary>
+          <div class="collapsible-content-inner" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> sequence $\mathbf{x}$, <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
+            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> log-likelihood $\log p_\theta^{\pi^F}(\mathbf{x})$</p>
+            <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
+            <p style="margin: 0.15rem 0;">2: <span style="color: #198754;">$\texttt{ll} \gets 0$</span> <span style="color: #6c757d; font-style: italic;">// Initialize log-likelihood</span></p>
+            <p style="margin: 0.15rem 0;">3: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
+            <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
+            <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
+            <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
+            <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #198754;">$\texttt{ll} \mathrel{+}= \log P_\ell[x_\ell]$</span> <span style="color: #6c757d; font-style: italic;">// Accumulate log-prob</span></p>
+            <p style="margin: 0.15rem 0;">8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal true token</span></p>
+            <p style="margin: 0.15rem 0;">9: <span style="color: #0066cc; font-weight: bold;">return</span> $\texttt{ll}$</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Evaluation Metrics Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Why Current Metrics Fall Short</h2>
+
+      <div class="content">
+        <p>
+          Standard MDM metrics do not measure the test-time distribution $p_\theta^{\pi^F}$.
+        </p>
+
+        <div class="two-column">
+          <div>
+            <h4 class="title is-5">Evidence Lower Bound (ELBO)</h4>
+            <ol>
+              <li><strong>Lower bound, not exact.</strong> The gap between ELBO and true likelihood (the <em>variational gap</em>) can be large, underestimating model quality.</li>
+              <li><strong>Wrong distribution.</strong> ELBO measures likelihood under <em>uniform random</em> position selection $\pi^{\mathrm{unif}}$ (all orderings equally likely). At test time, deterministic policies $\pi^F$ avoid bad orderings that uniform selection includes&mdash;but ELBO doesn't reflect this.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h4 class="title is-5">Generative Perplexity</h4>
+            <ol>
+              <li><strong>Reference model bias.</strong> Samples are scored by GPT-2, whose preferences may not reflect true quality.</li>
+              <li><strong>Ignores diversity.</strong> A model repeating one good phrase scores well despite mode collapse.</li>
+            </ol>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+        <div class="key-insight" style="margin-top: 2rem;">
+          <strong>DUEL resolves both:</strong> It computes <em>exact</em> likelihood (not a bound) under the <em>test-time</em> distribution $p_\theta^{\pi^F}$ (the actual distribution sampled from with deterministic policy $\pi^F$, not uniform $\pi^{\mathrm{unif}}$), using only the MDM itself (no external reference model).
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
 
+<!-- Experiment 1: Perplexity Gap -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Experiment 1: Reassessing the Perplexity Gap</h2>
 
+      <div class="content">
+        <p>
+          MDMs have consistently lagged behind ARMs in perplexity benchmarks. But how much of this gap reflects true model quality, and how much is an artifact of using the ELBO instead of exact likelihood? We evaluate multiple MDM architectures&mdash;including SEDD, MDLM, and BD3-LM&mdash;against a comparable autoregressive baseline.
+        </p>
 
+        <p>
+          For each model, we compute both the ELBO (the standard metric) and DUEL exact likelihood using greedy confidence unmasking. We report perplexity (lower is better) and the percentage of the ARM-MDM gap that DUEL closes:
+        </p>
 
+        <div class="definition-box">
+          <p class="def-title">Gap Closed Metric</p>
+          $$\text{Gap Closed} = \frac{\Delta_{\mathrm{ELBO}} - \Delta_{\mathrm{DUEL}}}{\Delta_{\mathrm{ELBO}}} \times 100\%$$
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;">where $\Delta = \mathrm{PPL}_{\mathrm{MDM}} - \mathrm{PPL}_{\mathrm{ARM}}$ measures how far the MDM lags behind the ARM.</p>
+        </div>
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
+        <h4 class="title is-5">In-Domain Results</h4>
+        <p>
+          DUEL consistently improves over the ELBO, closing 20-32% of the gap across all models. These gains come entirely from proper evaluation&mdash;the underlying models are unchanged. The improvement is expected: the ELBO averages over all orderings equally, including poor ones, while deterministic policies avoid such orderings.
+        </p>
 
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
+        <div class="table-row">
+          <div class="table-cell">
+            <h4 class="title is-6">OpenWebText (ARM: 17.54)</h4>
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>ELBO</th>
+                  <th>DUEL</th>
+                  <th>Gap Closed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SEDD</td>
+                  <td>$\leq$24.10</td>
+                  <td class="highlight">22.58</td>
+                  <td>23.2%</td>
+                </tr>
+                <tr>
+                  <td>MDLM</td>
+                  <td>$\leq$22.98</td>
+                  <td class="highlight">21.86</td>
+                  <td>20.6%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=4)</td>
+                  <td>$\leq$20.73</td>
+                  <td class="highlight">19.73</td>
+                  <td>31.3%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=8)</td>
+                  <td>$\leq$21.68</td>
+                  <td class="highlight">20.37</td>
+                  <td>31.6%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=16)</td>
+                  <td>$\leq$22.27</td>
+                  <td class="highlight">20.76</td>
+                  <td>31.9%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-cell">
+            <h4 class="title is-6">LM1B (ARM: 26.73)</h4>
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>ELBO</th>
+                  <th>DUEL</th>
+                  <th>Gap Closed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SEDD</td>
+                  <td>$\leq$33.79</td>
+                  <td class="highlight">32.48</td>
+                  <td>18.6%</td>
+                </tr>
+                <tr>
+                  <td>MDLM</td>
+                  <td>$\leq$32.76</td>
+                  <td class="highlight">31.02</td>
+                  <td>28.9%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=4)</td>
+                  <td>$\leq$30.51</td>
+                  <td class="highlight">29.40</td>
+                  <td>29.4%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=8)</td>
+                  <td>$\leq$31.02</td>
+                  <td class="highlight">29.69</td>
+                  <td>31.0%</td>
+                </tr>
+                <tr>
+                  <td>BD3-LM ($L'$=16)</td>
+                  <td>$\leq$31.26</td>
+                  <td class="highlight">29.86</td>
+                  <td>30.8%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h4 class="title is-5" style="margin-top: 2rem;">Zero-Shot Transfer & Large-Scale Results</h4>
+        <p>
+          Zero-shot evaluation on held-out datasets shows even larger improvements. BD3-LM closes up to 82% of the gap on Penn Treebank, with average gap closure of 30-49% across models. At 8B parameters, DUEL consistently reduces LLaDA perplexity compared to the ELBO across all benchmarks.
+        </p>
+
+        <div class="table-row">
+          <div class="table-cell">
+            <h4 class="title is-6">Zero-Shot Transfer (Gap Closed %)</h4>
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>SEDD</th>
+                  <th>MDLM</th>
+                  <th>BD3-LM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>PTB</td><td>31.3%</td><td>34.3%</td><td>81.8%</td></tr>
+                <tr><td>Wikitext</td><td>40.8%</td><td>28.5%</td><td>31.4%</td></tr>
+                <tr><td>AG News</td><td>25.7%</td><td>27.8%</td><td>51.7%</td></tr>
+                <tr style="font-weight: bold; background: #f8f9fa;"><td><em>Average</em></td><td>30.0%</td><td>29.9%</td><td>48.7%</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="table-cell">
+            <h4 class="title is-6">Large-Scale (8B Parameters)</h4>
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Method</th>
+                  <th>Wiki</th>
+                  <th>Lamb.</th>
+                  <th>AG</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Llama3</td><td>Exact</td><td>7.94</td><td>32.40</td><td>41.29</td></tr>
+                <tr><td rowspan="2">LLaDA</td><td>ELBO</td><td>$\leq$15.3</td><td>$\leq$39.0</td><td>$\leq$85.2</td></tr>
+                <tr><td>DUEL</td><td class="highlight">14.50</td><td class="highlight">36.00</td><td class="highlight">78.91</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="takeaway-box" style="margin-top: 1.5rem;">
+          <strong style="color: #ffd700;">Takeaway:</strong> These improvements come purely from proper evaluation&mdash;the models are unchanged. MDMs have been systematically underestimated by the ELBO, which averages over all orderings including poor ones. Deterministic policies avoid bad orderings, and DUEL measures this correctly. MDMs are closer to ARMs than previously believed.
+        </div>
       </div>
     </div>
-  </section>
-<!--End paper poster -->
+  </div>
+</section>
 
+
+<!-- Experiment 2: Sampling Strategies -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="section-content">
+      <h2 class="title is-3">Experiment 2: Comparing Sampling Strategies</h2>
+
+      <div class="content">
+        <p>
+          DUEL enables principled comparison of unmasking rules by fixing the denoiser $x_\theta$ and varying only the rule $F$. This comparison is impossible with the ELBO (which ignores the unmasking policy entirely) and unreliable with generative perplexity (which depends on a biased reference model).
+        </p>
+
+        <h4 class="title is-5">Comparing Fast Samplers</h4>
+
+        <p>DUEL perplexity by unmasking rule on OWT. Model: BD3-LM ($L'$=16). ELBO: $\leq$23.52.</p>
+
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Unmask Rule $F$</th>
+              <th>NFE=128</th>
+              <th>NFE=256</th>
+              <th>NFE=512</th>
+              <th>NFE=1024</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Left-to-Right</td>
+              <td>240.27</td>
+              <td>109.71</td>
+              <td>45.99</td>
+              <td class="highlight">21.46</td>
+            </tr>
+            <tr>
+              <td>Greedy Confidence</td>
+              <td>164.94</td>
+              <td>66.64</td>
+              <td>34.74</td>
+              <td>22.03</td>
+            </tr>
+            <tr>
+              <td>Probability Margin</td>
+              <td class="highlight">140.38</td>
+              <td class="highlight">57.48</td>
+              <td class="highlight">32.24</td>
+              <td>22.05</td>
+            </tr>
+            <tr>
+              <td>Confidence Threshold*</td>
+              <td>226.97</td>
+              <td>116.83</td>
+              <td>43.48</td>
+              <td>22.05</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size: 0.85rem; color: #666;">*Adaptive NFE; thresholds chosen to match target step counts.</p>
+
+        <div class="figure-container">
+          <img src="static/images/rule_comparison.png" alt="Comparison of DUEL perplexity vs generative perplexity across NFE budgets">
+          <p class="caption"><strong>Figure:</strong> <strong>Left:</strong> DUEL perplexity yields consistent rankings across NFE budgets. <strong>Right:</strong> Generative perplexity rankings cross repeatedly, making it unreliable.</p>
+        </div>
+
+        <div class="takeaway-box">
+          <strong style="color: #ffd700;">Takeaway:</strong> Probability margin performs best at low compute. DUEL gives consistent rankings across budgets; generative perplexity rankings cross repeatedly&mdash;left-to-right scores best at 128 NFE despite worst DUEL perplexity (degenerate text that GPT-2 rewards).
+        </div>
+
+        <h4 class="title is-5" style="margin-top: 2rem;">Oracle Perplexity</h4>
+
+        <p>
+          Since different rules yield different likelihoods, we ask: what is the <em>best possible</em> perplexity achievable over all orderings? The <strong>oracle perplexity</strong> answers this by exhaustively searching all permutations and selecting the one that maximizes likelihood for each sequence. For BD3-LM ($L'=4$), we search all $4!=24$ permutations per block. This represents an upper bound on MDM performance&mdash;the best a model could achieve if it always chose the optimal unmasking order.
+        </p>
+
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Method</th>
+              <th>Unmask Rule</th>
+              <th>Perplexity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ARM</td>
+              <td>Exact</td>
+              <td>&mdash;</td>
+              <td>52.11</td>
+            </tr>
+            <tr>
+              <td>BD3-LM</td>
+              <td>ELBO</td>
+              <td>&mdash;</td>
+              <td>$\leq$61.67</td>
+            </tr>
+            <tr>
+              <td>BD3-LM</td>
+              <td>DUEL</td>
+              <td>Left-to-Right</td>
+              <td>54.94</td>
+            </tr>
+            <tr>
+              <td>BD3-LM</td>
+              <td>DUEL</td>
+              <td>Greedy Conf.</td>
+              <td>56.73</td>
+            </tr>
+            <tr>
+              <td>BD3-LM</td>
+              <td>DUEL</td>
+              <td>Prob. Margin</td>
+              <td>57.80</td>
+            </tr>
+            <tr>
+              <td>BD3-LM</td>
+              <td>DUEL</td>
+              <td>Oracle</td>
+              <td class="highlight">36.47</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="takeaway-box">
+          <strong style="color: #ffd700;">Takeaway:</strong> The oracle ordering (36.47) surpasses the ARM baseline (52.11)&mdash;a degree of freedom ARMs lack. This suggests potential for test-time compute methods that find better orderings without ground-truth access.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
     </div>
+    <pre id="bibtex-code"><code>@article{turok2026duel,
+  title={DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking},
+  author={Turok, Gilad and De Sa, Chris and Kuleshov, Volodymyr},
+  year={2026}
+}</code></pre>
+  </div>
 </section>
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
+<footer class="footer">
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
       </div>
     </div>
   </div>
+</div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+</main>
 
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>

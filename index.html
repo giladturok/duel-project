@@ -57,8 +57,8 @@
   <title>DUEL: Exact Likelihood for Masked Diffusion</title>
 
   <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
 
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -565,8 +565,8 @@
         </p>
 
         <!-- Collapsible Common Unmasking Rules -->
-        <details class="collapsible-section" open>
-          <summary><span><strong>Common Unmasking Rules</strong></span></summary>
+        <details class="collapsible-section">
+          <summary><span><strong>Common Unmasking Rules &mdash; Instantiations from the Literature</strong></span></summary>
           <div class="collapsible-content-inner">
             <p style="margin-bottom: 0.75rem; font-size: 0.9rem; color: #666;">Let $\mathcal{M}(\mathbf{z})$ denote masked positions. $P_\ell^{(1)}$ and $P_\ell^{(2)}$ are the top-two token probabilities at position $\ell$.</p>
             <ul style="margin: 0;">
@@ -614,22 +614,20 @@
           The sampling procedure is straightforward: start fully masked, repeatedly select positions via $F$ and sample tokens at those positions, until all positions are revealed.
         </p>
 
-        <!-- Collapsible Algorithm 1 -->
-        <details class="collapsible-section" open>
-          <summary><span><strong>Algorithm 1: DUEL Sampling</strong></span></summary>
-          <div class="collapsible-content-inner" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
-            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
-            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> generated sequence $\mathbf{x}$</p>
-            <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
-            <p style="margin: 0.15rem 0;">2: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
-            <p style="margin: 0.15rem 0;">3: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
-            <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
-            <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
-            <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0d6efd;">$x_\ell \sim \mathrm{Cat}(P_\ell)$</span> <span style="color: #6c757d; font-style: italic;">// Sample token</span></p>
-            <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal token</span></p>
-            <p style="margin: 0.15rem 0;">8: <span style="color: #0066cc; font-weight: bold;">return</span> $\mathbf{z}$</p>
-          </div>
-        </details>
+        <!-- Algorithm 1 -->
+        <div class="algorithm-box">
+          <p class="algo-title">Algorithm 1: DUEL Sampling</p>
+          <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
+          <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> generated sequence $\mathbf{x}$</p>
+          <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
+          <p style="margin: 0.15rem 0;">2: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
+          <p style="margin: 0.15rem 0;">3: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
+          <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
+          <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
+          <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0d6efd;">$x_\ell \sim \mathrm{Cat}(P_\ell)$</span> <span style="color: #6c757d; font-style: italic;">// Sample token</span></p>
+          <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal token</span></p>
+          <p style="margin: 0.15rem 0;">8: <span style="color: #0066cc; font-weight: bold;">return</span> $\mathbf{z}$</p>
+        </div>
 
         <div class="key-insight">
           <strong>Implicit Distribution:</strong> Algorithm 1 defines an <em>implicit</em> generative procedure&mdash;we can draw samples without writing down the induced distribution in closed form. Different unmasking rules $F$ yield different distributions, even with the same network $x_\theta$.
@@ -766,23 +764,21 @@
           <strong>Likelihood follows generation:</strong> The algorithm mirrors sampling&mdash;simulate the unmasking process, but instead of sampling tokens, reveal the <em>true</em> tokens from $\mathbf{x}$ and accumulate their log-probabilities. This is the crux of DUEL: the likelihood computation follows the same path as generation.
         </p>
 
-        <!-- Algorithm 2 - open by default -->
-        <details class="collapsible-section" open>
-          <summary><span><strong>Algorithm 2: DUEL Exact Likelihood</strong></span></summary>
-          <div class="collapsible-content-inner" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
-            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> sequence $\mathbf{x}$, <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
-            <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> log-likelihood $\log p_\theta^{\pi^F}(\mathbf{x})$</p>
-            <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
-            <p style="margin: 0.15rem 0;">2: <span style="color: #198754;">$\texttt{ll} \gets 0$</span> <span style="color: #6c757d; font-style: italic;">// Initialize log-likelihood</span></p>
-            <p style="margin: 0.15rem 0;">3: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
-            <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
-            <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
-            <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
-            <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #198754;">$\texttt{ll} \mathrel{+}= \log P_\ell[x_\ell]$</span> <span style="color: #6c757d; font-style: italic;">// Accumulate log-prob</span></p>
-            <p style="margin: 0.15rem 0;">8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal true token</span></p>
-            <p style="margin: 0.15rem 0;">9: <span style="color: #0066cc; font-weight: bold;">return</span> $\texttt{ll}$</p>
-          </div>
-        </details>
+        <!-- Algorithm 2 -->
+        <div class="algorithm-box">
+          <p class="algo-title">Algorithm 2: DUEL Exact Likelihood</p>
+          <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Input:</span> sequence $\mathbf{x}$, <span style="color: #7c3aed;">denoising network $x_\theta$</span>, <span style="color: #2563eb;">unmasking rule $F$</span></p>
+          <p style="margin: 0.15rem 0;"><span style="color: #0066cc; font-weight: bold;">Output:</span> log-likelihood $\log p_\theta^{\pi^F}(\mathbf{x})$</p>
+          <p style="margin: 0.15rem 0;">1: $\mathbf{z} \gets (\texttt{[M]}, \ldots, \texttt{[M]})$ <span style="color: #6c757d; font-style: italic;">// Start fully masked</span></p>
+          <p style="margin: 0.15rem 0;">2: <span style="color: #198754;">$\texttt{ll} \gets 0$</span> <span style="color: #6c757d; font-style: italic;">// Initialize log-likelihood</span></p>
+          <p style="margin: 0.15rem 0;">3: <span style="color: #0066cc; font-weight: bold;">while</span> $\mathcal{M}(\mathbf{z}) \neq \emptyset$:</p>
+          <p style="margin: 0.15rem 0;">4: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #7c3aed;">$\mathbf{P} \gets \mathrm{softmax}(x_\theta(\mathbf{z}))$</span> <span style="color: #6c757d; font-style: italic;">// Token probabilities</span></p>
+          <p style="margin: 0.15rem 0;">5: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2563eb;">$\mathcal{I} \gets F(\mathbf{z})$</span> <span style="color: #6c757d; font-style: italic;">// Positions to unmask</span></p>
+          <p style="margin: 0.15rem 0;">6: &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #0066cc; font-weight: bold;">for</span> $\ell \in \mathcal{I}$:</p>
+          <p style="margin: 0.15rem 0;">7: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #198754;">$\texttt{ll} \mathrel{+}= \log P_\ell[x_\ell]$</span> <span style="color: #6c757d; font-style: italic;">// Accumulate log-prob</span></p>
+          <p style="margin: 0.15rem 0;">8: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$\mathbf{z}[\ell] \gets x_\ell$ <span style="color: #6c757d; font-style: italic;">// Reveal true token</span></p>
+          <p style="margin: 0.15rem 0;">9: <span style="color: #0066cc; font-weight: bold;">return</span> $\texttt{ll}$</p>
+        </div>
       </div>
     </div>
   </div>
@@ -819,7 +815,7 @@
         </div>
 
         <div class="key-insight" style="margin-top: 2rem;">
-          <strong>DUEL resolves both:</strong> It computes <em>exact</em> likelihood (not a bound) under the <em>test-time</em> distribution $p_\theta^{\pi^F}$ (the actual distribution sampled from with deterministic policy $\pi^F$, not uniform $\pi^{\mathrm{unif}}$), using only the MDM itself (no external reference model).
+          <strong style="color: #ffd700;">DUEL resolves both:</strong> It computes <em>exact</em> likelihood (not a bound) under the <em>test-time</em> distribution $p_\theta^{\pi^F}$ (the actual distribution sampled from with deterministic policy $\pi^F$, not uniform $\pi^{\mathrm{unif}}$), using only the MDM itself (no external reference model).
         </div>
       </div>
     </div>
@@ -1016,6 +1012,10 @@
 
         <h4 class="title is-5">Comparing Fast Samplers</h4>
 
+        <p>
+          Fast samplers differ in their unmasking rule $F$. Aggressive rules unmask many positions per step for speed; conservative rules unmask fewer for quality. DUEL enables principled comparison by measuring exact likelihood under the test-time distribution. Other metrics&mdash;the ELBO, generative perplexity, entropy, MAUVE&mdash;are unreliable: the ELBO ignores the unmasking policy, generative perplexity depends on a biased reference model, and entropy/MAUVE have other shortcomings.
+        </p>
+
         <p>DUEL perplexity by unmasking rule on OWT. Model: BD3-LM ($L'$=16). ELBO: $\leq$23.52.</p>
 
         <table class="results-table">
@@ -1061,14 +1061,20 @@
         </table>
         <p style="font-size: 0.85rem; color: #666;">*Adaptive NFE; thresholds chosen to match target step counts.</p>
 
-        <div class="figure-container">
-          <img src="static/images/rule_comparison.png" alt="Comparison of DUEL perplexity vs generative perplexity across NFE budgets">
-          <p class="caption"><strong>Figure:</strong> <strong>Left:</strong> DUEL perplexity yields consistent rankings across NFE budgets. <strong>Right:</strong> Generative perplexity rankings cross repeatedly, making it unreliable.</p>
-        </div>
-
         <div class="takeaway-box">
           <strong style="color: #ffd700;">Takeaway:</strong> Probability margin performs best at low compute. DUEL gives consistent rankings across budgets; generative perplexity rankings cross repeatedly&mdash;left-to-right scores best at 128 NFE despite worst DUEL perplexity (degenerate text that GPT-2 rewards).
         </div>
+
+        <!-- Collapsible section for unreliable metrics comparison -->
+        <details class="collapsible-section">
+          <summary><span><strong>Why Other Metrics Fail</strong></span></summary>
+          <div class="collapsible-content-inner">
+            <div class="figure-container">
+              <img src="static/images/rule_comparison.png" alt="Comparison of DUEL perplexity vs generative perplexity across NFE budgets">
+              <p class="caption"><strong>Figure:</strong> <strong>Left:</strong> DUEL perplexity yields consistent rankings. <strong>Right:</strong> Generative perplexity rankings cross repeatedly.</p>
+            </div>
+          </div>
+        </details>
 
         <h4 class="title is-5" style="margin-top: 2rem;">Oracle Perplexity</h4>
 

@@ -6,7 +6,7 @@
 
   <!-- Primary Meta Tags -->
   <meta name="title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
-  <meta name="description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta name="description" content="We introduce DUEL, a framework for proper likelihood evaluation in masked diffusion models—exact (not a bound) and under the test-time distribution. DUEL closes the perplexity gap with ARMs by up to 82%.">
   <meta name="keywords" content="masked diffusion, discrete diffusion, language models, likelihood estimation, MDLM, LLaDA, machine learning">
   <meta name="author" content="Gilad Turok, Chris De Sa, Volodymyr Kuleshov">
   <meta name="robots" content="index, follow">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Cornell University">
   <meta property="og:title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
-  <meta property="og:description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta property="og:description" content="We introduce DUEL, a framework for proper likelihood evaluation in masked diffusion models—exact (not a bound) and under the test-time distribution. DUEL closes the perplexity gap with ARMs by up to 82%.">
   <meta property="og:url" content="https://github.com/kuleshov-group/duel">
   <meta property="og:image" content="static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
@@ -31,7 +31,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DUEL: Exact Likelihood for Masked Diffusion via Deterministic Unmasking">
-  <meta name="twitter:description" content="We introduce DUEL, a framework for exact likelihood computation in masked diffusion models. DUEL closes the perplexity gap between MDMs and ARMs by up to 82%.">
+  <meta name="twitter:description" content="We introduce DUEL, a framework for proper likelihood evaluation in masked diffusion models—exact (not a bound) and under the test-time distribution. DUEL closes the perplexity gap with ARMs by up to 82%.">
   <meta name="twitter:image" content="static/images/social_preview.png">
   <meta name="twitter:image:alt" content="DUEL - Exact Likelihood for Masked Diffusion">
 
@@ -408,7 +408,7 @@
             <!-- TL;DR -->
             <div class="tldr-box" style="margin-top: 1.25rem; padding: 0.75rem 1.25rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; display: inline-block;">
               <p style="margin: 0; color: white; font-size: 0.95rem;">
-                <strong style="color: #ffd700;">TL;DR:</strong> We show MDM samplers admit <em>exact</em> likelihood computation, revealing MDMs are much better than the ELBO suggests&mdash;closing up to 82% of the gap with autoregressive models.
+                <strong style="color: #ffd700;">TL;DR:</strong> We show MDM samplers admit <em>proper</em> likelihood evaluation&mdash;exact (not a bound) and under the test-time distribution&mdash;revealing MDMs are much better than the ELBO suggests, closing up to 82% of the gap with autoregressive models.
               </p>
             </div>
           </div>
@@ -426,7 +426,7 @@
         <h2 class="title is-4">Abstract</h2>
         <div class="content has-text-justified" style="font-size: 0.92rem; line-height: 1.6;">
           <p>
-            Masked diffusion models (MDMs) generate text by iteratively unmasking tokens. Each step decomposes into <em style="color: #2563eb;">position selection</em> (which positions to reveal) and <em style="color: #7c3aed;">token prediction</em> (which tokens to place). We formalize <em>deterministic</em> position selection&mdash;unifying leading MDM sampling strategies&mdash;in our <strong>DUEL</strong> framework. We show DUEL admits <em>exact</em> likelihood computation via a simple algorithm. We propose DUEL likelihood as the standard evaluation metric for MDMs, addressing key limitations in existing approaches: the ELBO is a loose bound measuring likelihood under the wrong distribution, while generative perplexity requires a biased external model. Proper evaluation via DUEL reveals MDMs are substantially better than previously thought&mdash;the MDM&ndash;autoregressive perplexity gap shrinks by up to 32% on in-domain data and 82% on zero-shot benchmarks. DUEL also enables principled sampler comparisons, providing reliable rankings of fast, parallel samplers and revealing through oracle search that optimal orderings allow MDMs to surpass autoregressive models entirely.
+            Masked diffusion models (MDMs) generate text by iteratively selecting positions to unmask and then predicting tokens at those positions. Yet MDMs lack proper likelihood evaluation: the evidence lower bound (ELBO) is not only a loose bound on log-likelihood, but, as we show, is also computed under the training distribution rather than the test-time distribution. We resolve this within our <strong>DUEL</strong> framework, which unifies leading MDM sampling strategies that employ <em>deterministic</em> position selection. We prove that DUEL samplers admit <strong>exact likelihood computation under the test-time distribution</strong>&mdash;giving MDMs <em>proper</em> likelihood, and hence proper perplexity, for the first time. This proper perplexity is the natural analogue of autoregressive perplexity and lets us revisit key questions about MDMs. <strong>MDMs are substantially better than previously thought</strong>: the MDM&ndash;autoregressive perplexity gap shrinks by up to 32% on in-domain data and 82% on zero-shot benchmarks. DUEL enables the first principled comparison of fast, parallel samplers across compute budgets&mdash;an analysis impossible with the ELBO and unreliable with generative perplexity&mdash;identifying a strong default method. Finally, oracle search over position orderings reveals MDMs can far surpass autoregressive models&mdash;achieving 36.47 vs. 52.11 perplexity on AG News&mdash;demonstrating the ceiling of MDM performance has not yet been reached.
           </p>
         </div>
       </div>
@@ -660,7 +660,14 @@
         <h4 class="title is-5">Ordered Partitions</h4>
 
         <p>
-          To formalize the sequence of unmasking steps during generation, we introduce <strong>ordered partitions</strong>. An ordered partition $\sigma = (\sigma_1, \ldots, \sigma_T)$ is a tuple of non-empty, pairwise disjoint subsets that together cover all positions $\{1, \ldots, L\}$. Each $\sigma_t$ records which positions are revealed at step $t$, and $T$ denotes the total number of steps.
+          To formalize the sequence of unmasking steps during generation, we introduce <strong>ordered partitions</strong>. An ordered partition $\sigma = (\sigma_1, \ldots, \sigma_T)$ is a tuple of non-empty subsets of $\{1, \ldots, L\}$ satisfying:
+        </p>
+        <ol>
+          <li><strong>Pairwise disjoint:</strong> $\sigma_s \cap \sigma_t = \emptyset$ for all $s \neq t$</li>
+          <li><strong>Exhaustive:</strong> $\sigma_1 \cup \cdots \cup \sigma_T = \{1, \ldots, L\}$</li>
+        </ol>
+        <p>
+          Each $\sigma_t$ records which positions are revealed at step $t$, and $T$ denotes the total number of steps.
         </p>
 
         <p>
@@ -744,11 +751,15 @@
 <section class="section">
   <div class="container is-max-desktop">
     <div class="section-content">
-      <h2 class="title is-3">Exact Likelihood Computation</h2>
+      <h2 class="title is-3">Proper Likelihood Evaluation</h2>
 
       <div class="content">
         <p>
-          Computing the induced distribution directly appears intractable&mdash;the sum is over all unmasking orders $\sigma$ (with $ \geq L!$ terms) where each requires a separate neural network evaluation. However, <strong>a deterministic rule $F$ collapses the sum to a single term</strong>:
+          DUEL delivers <em>proper</em> likelihood evaluation for MDMs: the likelihood is <strong>exact</strong> (not a lower bound) and computed under the <strong>test-time distribution</strong> (not the training distribution). Here we show why this is possible.
+        </p>
+
+        <p>
+          Computing the induced distribution directly appears intractable&mdash;the summation is over all unmasking orders $\sigma$ (with $ \geq L!$ terms) where each requires a separate neural network evaluation. However, <strong>a deterministic rule $F$ collapses the sum to a single term</strong>:
         </p>
 
         <ul>
@@ -760,7 +771,7 @@
         <div class="theorem-box">
           <p class="theorem-title"><strong>Theorem (DUEL Exact Likelihood)</strong></p>
           <p>
-            For a DUEL sampler $(x_\theta, F)$, the log-likelihood has a simple closed form:
+            For a DUEL sampler $(x_\theta, F)$, the log-likelihood is <strong>exact</strong> (not a bound) and computed under the <strong>test-time distribution</strong> $p_\theta^{\pi^F}$:
           </p>
           $$\log p_\theta^{\pi^F}(\mathbf{x}) = \sum_{t=1}^{T} \sum_{\ell \in \sigma^*_t} \log p_\theta(x^{(\ell)} \mid \mathbf{x}_{<\sigma^*_t})$$
           <p style="margin-top: 0.5rem;">
@@ -801,7 +812,7 @@
 
       <div class="content">
         <p>
-          Standard MDM metrics do not measure the test-time distribution $p_\theta^{\pi^F}$.
+          Standard MDM metrics fail to provide proper likelihood evaluation. The ELBO is a loose bound (not exact) computed under the wrong distribution (uniform, not test-time). Generative perplexity avoids both issues but introduces external model bias.
         </p>
 
         <div class="two-column">
@@ -999,7 +1010,7 @@
         </div>
 
         <div class="takeaway-box" style="margin-top: 1.5rem;">
-          <strong style="color: #ffd700;">Takeaway:</strong> These improvements come purely from proper evaluation&mdash;the models are unchanged. MDMs have been systematically underestimated by the ELBO, which averages over all orderings including poor ones. Deterministic policies avoid bad orderings, and DUEL measures this correctly. MDMs are closer to ARMs than previously believed.
+          <strong style="color: #ffd700;">Takeaway:</strong> These improvements come purely from proper likelihood evaluation&mdash;exact likelihood under the test-time distribution, rather than a loose bound under the training distribution. The models themselves are unchanged. MDMs are closer to ARMs than previously believed.
         </div>
       </div>
     </div>
@@ -1077,6 +1088,12 @@
         <details class="collapsible-section">
           <summary><span><strong>Why Other Metrics Fail</strong></span></summary>
           <div class="collapsible-content-inner">
+            <p>We compare DUEL perplexity against three sample-based metrics&mdash;generative perplexity, entropy, and MAUVE&mdash;and find each unreliable:</p>
+            <ul>
+              <li><strong>Generative perplexity</strong> rankings are inconsistent across NFE budgets. Strikingly, left-to-right achieves the <em>lowest</em> generative perplexity at 128 NFE despite having the <em>worst</em> DUEL perplexity. The explanation: left-to-right produces low-entropy, repetitive text at low NFE, and autoregressive evaluators like GPT-2 reward such degenerate output with low perplexity. Generative perplexity also distorts magnitude, showing 30&ndash;40&times; degradation from 1024 to 128 NFE versus 6&ndash;11&times; under DUEL.</li>
+              <li><strong>Entropy</strong> confirms the degeneracy: left-to-right drops to ~4.2 bits at low NFE (repetitive text), while probability margin and greedy confidence maintain ~4.8&ndash;5.0 bits (diverse output). However, entropy alone cannot rank samplers&mdash;it measures diversity, not quality.</li>
+              <li><strong>MAUVE</strong> saturates near zero at low NFE for all rules, providing almost no discriminative signal. It is most useful for distinguishing high-quality regimes, not for comparing degraded generation.</li>
+            </ul>
             <div class="figure-container">
               <img src="static/images/rule_comparison.png" alt="Comparison of DUEL perplexity vs generative perplexity across NFE budgets">
               <p class="caption"><strong>Figure:</strong> <strong>Left:</strong> DUEL perplexity yields consistent rankings. <strong>Right:</strong> Generative perplexity rankings cross repeatedly.</p>
